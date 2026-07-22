@@ -1,0 +1,183 @@
+* {
+  box-sizing: border-box; /* Keeps total width at exactly */
+}
+
+html {
+    height: auto;
+}
+
+body {
+    margin: 0;
+    width: auto;
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 93.5vh 6.5vh;
+
+    grid-template-areas:
+    "main" "footer";
+}
+
+#bodybody {
+    grid-area: main;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 96%;
+
+    min-width: 800px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    min-height: 100%;
+    justify-self: center;
+
+    padding: 0px;
+
+    display: grid;
+
+    grid-template-areas:
+    "one";
+}
+
+#above-canvas, #menu-canvas-area {
+    grid-area: one;
+}
+
+#above-canvas {
+    display: grid;
+
+    grid-template-columns: 17% 83%;
+    grid-template-rows: 1fr;
+    
+    grid-template-areas:
+    "together itself";
+
+    position: relative;
+    z-index: 1;
+}
+
+#menu-canvas-area {
+    height: 93vh;
+    position: relative;
+    z-index: 0;
+}
+
+#menu-canvas-holder {
+    width: auto;
+    height: auto;
+}
+
+#top, aside {
+    grid-area: together;
+}
+
+nav {
+    grid-area: itself;
+}
+
+#top {
+    width: 100%;
+    height: 10em;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    justify-content: space-between;
+    align-items: center;
+
+    align-self: center;
+
+    padding-bottom: 20em;
+    overflow-x: visible;
+    
+    position: relative;
+}
+#name {
+    transition: transform 0.5s;
+    font-size: 80pt;
+    color: white;
+    -webkit-text-stroke: 16pt var(--mainblue);
+    paint-order: stroke fill;
+    padding-left: 0.5em;
+}
+
+nav {
+    width: fit-content;
+    height: fit-content;
+    
+    justify-self: left;
+    align-self: center;
+}
+
+nav ul {
+    padding-right: 1em;
+    list-style-type: none;
+    font-size: 24pt;
+    text-align: left;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    -webkit-text-stroke: 5.75pt var(--mainblue);
+    paint-order: stroke fill;
+}
+
+aside {
+    background-color: var(--mainblue);
+    color: white;
+    padding: 1.5em;
+    padding-top: 24em;
+
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+    top: 0;
+    height: 100%;
+    width: 100%; /* 13% */
+
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+.aside-title {
+    font-size: 20pt;
+    margin-bottom: 0.5em;
+}
+
+.aside-desc {
+    font-size: 14pt;
+        
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+}
+
+#menu-canvas-area {
+    overflow: clip;
+}
+
+footer {
+    grid-area: footer;
+    width: 100%;
+    margin: 0;
+    justify-self: left;
+
+    background-color: var(--mainblue);
+    border-top: 0.4em solid var(--neoncyan);
+    
+    display: flex;
+
+    padding: 1em;
+
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    color: white;
+    position: relative;
+
+}

@@ -1,0 +1,29 @@
+/* Fonts */
+
+.stack-sans-notch-title {
+  font-family: "Stack Sans Notch", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.stack-sans-headline-bold {
+  font-family: "Stack Sans Headline", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.cossette-texte-regular {
+  font-family: "Cossette Texte", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.on-this-page {
+    color: var(--lightorange);
+}
+
+nav ul li a:hover{
+    color: var(--neoncyan);
+}

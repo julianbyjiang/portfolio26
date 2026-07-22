@@ -1,0 +1,21 @@
+.zoomOnHover:hover {
+	-ms-transform: scale(1.5); /* IE 9 */
+	-webkit-transform: scale(1.5); /* Safari 3-8 */
+  
+	transform: scale(1.5); /* transition: transform .2s; in the thing*/
+}
+
+.smallZoomOnHover:hover {
+	-ms-transform: scale(1.12); /* IE 9 */
+	-webkit-transform: scale(1.12); /* Safari 3-8 */
+  
+	transform: scale(1.12); /* transition: transform .2s; in the thing*/
+}
+
+#header-name {
+    transition: transform 0.5s;
+}
+
+nav li {
+    transition: transform 0.2s;
+}

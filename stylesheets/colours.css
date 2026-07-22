@@ -1,0 +1,41 @@
+:root {
+	/* Colours */
+	--dark-green: rgb(67 107 48);
+	--light-green: rgb(207 236 165); /* #EAFBCC lighter green */
+	--prismarine: rgb(144 214 174);
+	--light-blue2: rgb(160 235 218);
+	--light-blue: rgb(186 228 230);
+	--dark-blue: rgb(22, 40, 65);
+	--yellow: rgb(248 224 107);
+	--yellow2: #ffef73;
+	--light-yellow: #fbffbf;
+	--brown: rgb(111 80 61);
+	--dark-brown: rgb(83 44 32);
+	--paper-white: rgb(248 246 227);
+	--paper-edge: rgb(212 193 148);
+
+    /* redo */
+
+    --mainblue: #102B94;
+    --neoncyan: #67E3FF; /* var(--neoncyan) */
+    --lightcyan: #DEFFFF;
+    --lightorange: #FFE371;
+    --orange: #FFA600;
+    --deeporange: #FF5900;
+}
+
+.gradient-orange-blue {
+    background: linear-gradient( to bottom, var(--neoncyan),var(--lightorange) 29%, var(--orange) 61%, var(--deeporange) 100%);
+}
+
+.gradient-orange-yellow {
+    background: linear-gradient( to bottom, var(--orange),var(--lightorange) 29%, var(--orange) 61%, var(--deeporange) 100%);
+}
+
+.gradient-blue-orange {
+    background: linear-gradient( to bottom, var(--lightcyan),var(--neoncyan) 29%, var(--lightorange) 61%, var(--orange) 100%);
+}
+
+.gradient-deeporange-blue {
+    background: linear-gradient( to bottom, var(--deeporange),var(--lightorange) 29%, var(--neoncyan) 61%, var(--neoncyan) 100%);
+}
