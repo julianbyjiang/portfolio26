@@ -16,12 +16,7 @@ const TEXT_SYMBOLS_GRAVITY = 3;
 // Bunny
 let bunnyImg;
 
-function setupCanvas() {
-    myCanvas = createCanvas(windowWidth * 0.96, windowHeight);
-    parent = document.getElementById("menu-canvas-holder");
-    myCanvas.parent(parent);
-    parent.style.zoom = 1;
-}
+
 
 function preload() {
   bunnyImg = {
@@ -30,14 +25,21 @@ function preload() {
     trueH: 1278,
     w: 0, // not defined yet
     h: 0, // not defined yet
-    startX: 20,
-    startY: 100, // this is important...
+    startX: 40,
+    startY: windowHeight * 0.3, // this is important...
     x: 0,
     y: 0,
     t: 0,
-    inc: 1 / 60,
+    inc: 1 / 70, // smaller number goes slower
     up: true
   } 
+}
+
+function setupCanvas() {
+    myCanvas = createCanvas(windowWidth, windowHeight);
+    parent = document.getElementById("menu-canvas-holder");
+    myCanvas.parent(parent);
+    parent.style.zoom = 1;
 }
 
 function setup() {
@@ -59,12 +61,13 @@ function windowResized () {
   setupBunny();
 }
 
+// BUNNY START +
 function setupBunny() {
   if (width > height) {
     bunnyImg.h = height * 0.8;
     bunnyImg.w = map(bunnyImg.trueW, 0, bunnyImg.trueH, 0, bunnyImg.h); 
   } else {
-    bunnyImg.w = width * 0.8;
+    bunnyImg.w = width * 0.6;
     bunnyImg.h = map(bunnyImg.trueH, 0, bunnyImg.trueW, 0, bunnyImg.w); 
   }
   // wow that took too much thinking time to come up with this
@@ -85,11 +88,13 @@ function drawBunny() {
     }
   }
   
-  bunnyImg.x = -lerp(bunnyImg.startX, 0, easeInOutSine(bunnyImg.t)); // something
-  bunnyImg.y = lerp(bunnyImg.startY, 0, easeInQuad(bunnyImg.t)); 
+  bunnyImg.x = -lerp(bunnyImg.startX, 0, easeInOutSine(bunnyImg.t)); // or easeInOutSine/Circ
+  bunnyImg.y = lerp(bunnyImg.startY, 0, easeInOutCubic(bunnyImg.t));  // or easeInOutQuad/Bounce/Elastic
   image(bunnyImg.img, bunnyImg.x, bunnyImg.y, bunnyImg.w, bunnyImg.h);
 }
+// BUNNY END -
 
+// TEXT SYMBOLS START +
 // These will follow the mouse and dissolve
 function setupTextSymbols() {
   textSymbols = [];
@@ -104,7 +109,7 @@ function setupTextSymbols() {
 }
 
 function drawTextSymbols() {
-  if (frameCount % 2 === 0) {
+  if (frameCount % 2 === 0) { // every 2 frames
     textSymbols.push({
       txt: randomTextSymbol(),
       x: mouseX,
@@ -141,7 +146,9 @@ function drawTextSymbols() {
 function randomTextSymbol() {
   return(random([".", ",", "*", "⋆", "˚", "꩜", "｡ּ", "☁︎","☾", "୨୧", "₊", "⊹", "x", "+"]));
 }
+// TEXT SYMBOLS END -
 
+// THEEEEEE draw function
 function draw() {
   clear();
 

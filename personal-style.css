@@ -3,7 +3,7 @@
 }
 
 html {
-    height: auto;
+    height: 100%;
 }
 
 body {
@@ -102,6 +102,7 @@ aside {
 }
 
 #main-area {
+    grid-area: main;
     margin-top: 1em;
     justify-self: right;
     align-self: top;
@@ -130,7 +131,7 @@ aside {
     margin-bottom: 0px;
 }
 
-#page-bar p, #page-bar a {
+#page-bar p {
     align-self: center;
     color: white;
     -webkit-text-stroke: 5.5pt var(--deeporange);
@@ -138,26 +139,26 @@ aside {
 
 }
 
-#canvas-area {
+#gallery-area {
     margin-top: 0.5em;
 
     width: 100%;
     min-height: 300px;
     height: 67vh;
 
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-
-    justify-items: center;
-    align-items: center;
-
     overflow-y: auto;
-
-    /* border: 0.2em solid white; */
 }
 
-#canvas-holder {
-    width: auto;
+#gallery {
     height: auto;
+    width: inherit;
+    
+    /* maybe use flexbox with wrapping for this one... */
+
+    display: flex;
+
+    justify-content: left;
+    gap: 0.5em;
+    
+    background-color: var(--lightcyan);
 }

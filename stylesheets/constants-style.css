@@ -1,0 +1,159 @@
+/* index.html doesn't use this */
+
+nav ul {
+    padding-right: 1em;
+    list-style-type: none;
+    font-size: 20pt; /* 24 pt for index */
+    text-align: right;
+}
+
+nav ul li {
+    color: white;
+    text-decoration: none;
+    -webkit-text-stroke: 5.5pt var(--mainblue);
+    paint-order: stroke fill;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+footer {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100%;
+    justify-self: center;
+
+    background-color: var(--mainblue);
+    border-top: 0.4em solid var(--deeporange);
+    
+    display: flex;
+
+    padding: 1em;
+
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    color: white;
+
+    position: relative;
+    z-index: 1;
+}
+
+footer.orange {
+    border-top: 0.4em solid var(--orange);
+}
+
+.yscroll-holder {
+    overflow-y: auto;
+    height: 100%;
+    width: 100%;
+}
+
+.yscroll-inside {
+    width: inherit;
+    min-height: 100%;
+    height: auto;
+}
+
+/* Scroll bar blue white */
+.scrollbar-blue-white::-webkit-scrollbar {
+    background: var(--mainblue);
+}
+.scrollbar-blue-white::-webkit-scrollbar-thumb {
+    background: white;
+    border: 0.5em solid var(--mainblue);
+    border-left: 0;
+}
+.scrollbar-blue-white::-webkit-scrollbar-thumb:hover {
+    background: var(--lightcyan);
+}
+
+/* projects.html gallery-area */
+#gallery-area.scrollbar-blue-white::-webkit-scrollbar {
+    width: 1em;
+}
+#gallery-area.scrollbar-blue-white::-webkit-scrollbar-thumb {
+    background: white;
+    border: 0.35em solid var(--mainblue);
+}
+#gallery-area.scrollbar-blue-white::-webkit-scrollbar-thumb:hover {
+    background: var(--lightcyan);
+}
+
+/* Scroll bar orange white */
+.scrollbar-orange-white::-webkit-scrollbar {
+    background: var(--deeporange);
+}
+.scrollbar-orange-white::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 1em;
+    border: 0.25em solid var(--deeporange);
+}.scrollbar-orange-white::-webkit-scrollbar-thumb:hover {
+    background: var(--orange);
+}
+
+/* Scroll bar orange yellow */
+.scrollbar-orange-yellow::-webkit-scrollbar {
+    background: var(--orange);
+}
+.scrollbar-orange-yellow::-webkit-scrollbar-thumb {
+    background: var(--lightorange);
+    /* border-radius: 1em; */
+    border: 0.45em solid var(--orange);
+    border-left: 0;
+}.scrollbar-orange-yellow::-webkit-scrollbar-thumb:hover {
+    background: var(--deeporange);
+}
+
+/* Scroll bar yellow (lightorange) blue */
+.scrollbar-yellow-blue::-webkit-scrollbar {
+    background: var(--lightorange);
+}
+.scrollbar-yellow-blue::-webkit-scrollbar-thumb {
+    background: var(--mainblue);
+    border-radius: 1em;
+    border: 0.25em solid var(--lightorange);
+}.scrollbar-yellow-blue::-webkit-scrollbar-thumb:hover {
+    background: var(--deepblue);
+}
+
+/* Scroll bar yellow orange */
+.scrollbar-yellow-orange::-webkit-scrollbar {
+    background: var(--lightorange);
+}
+.scrollbar-yellow-orange::-webkit-scrollbar-thumb {
+    background: var(--orange);
+    border: 0.4em solid var(--lightorange);
+    border-left: 0;
+    border-radius: 1em;
+}.scrollbar-yellow-orange::-webkit-scrollbar-thumb:hover {
+    background: var(--deeporange);
+}
+
+
+
+
+/* Buttons  if i want them 
+.scrollbar-blue-white::-webkit-scrollbar-button:single-button {
+    background-color: var(--mainblue);
+    display: block;
+    border-style: solid;
+}
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+  border-width: 0 8px 8px 8px; this is the triangle
+  border-color: transparent transparent white transparent;
+}
+::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+  border-color: transparent transparent white transparent;
+}
+::-webkit-scrollbar-button:single-button:vertical:increment {
+  border-width: 8px 8px 0 8px;
+  border-color: white transparent transparent transparent;
+}
+::-webkit-scrollbar-button:vertical:single-button:increment:hover {
+  border-color: white transparent transparent transparent;
+}
+*/

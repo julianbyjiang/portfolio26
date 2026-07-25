@@ -20,10 +20,17 @@
   font-style: normal;
 }
 
+.bold {
+  font-weight: bold;
+}
+
+
+/* Nav stuff */
+
 .on-this-page {
-    color: var(--lightorange);
+  color: var(--lightorange);
 }
 
 nav ul li a:hover{
-    color: var(--neoncyan);
+  color: var(--neoncyan);
 }

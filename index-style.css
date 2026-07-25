@@ -23,7 +23,7 @@ body {
     grid-area: main;
     margin-top: 0;
     margin-bottom: 0;
-    width: 96%;
+    width: 100%;
 
     min-width: 800px;
 
@@ -46,6 +46,8 @@ body {
 }
 
 #above-canvas {
+    width: 96%;
+    justify-self: center;
     display: grid;
 
     grid-template-columns: 17% 83%;
@@ -110,20 +112,25 @@ nav {
     
     justify-self: left;
     align-self: center;
+    text-align: left;
 }
 
 nav ul {
     padding-right: 1em;
     list-style-type: none;
     font-size: 24pt;
-    text-align: left;
+}
+
+nav ul li {
+    color: white;
+    text-decoration: none;
+    -webkit-text-stroke: 5.5pt var(--mainblue);
+    paint-order: stroke fill;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
-    -webkit-text-stroke: 5.75pt var(--mainblue);
-    paint-order: stroke fill;
 }
 
 aside {

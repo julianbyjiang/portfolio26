@@ -5,7 +5,6 @@
 html {
     height: auto;
 }
-
 body {
     margin: 0;
     width: auto;
@@ -13,7 +12,7 @@ body {
 
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 93.5vh 6.5vh;
+    grid-template-rows: 94vh 6vh;
 
     grid-template-areas:
     "main" "footer";
@@ -62,6 +61,7 @@ body {
     z-index: 1;
 }
 
+
 #name {
     transition: transform 0.5s;
     font-size: 80pt;
@@ -102,13 +102,14 @@ aside {
 }
 
 #main-area {
+    grid-area: main;
     margin-top: 1em;
     justify-self: right;
     align-self: top;
 
     width: 80%; /* 75% */
     display: grid;
-    grid-template-rows: auto 10fr;
+    grid-template-rows: 20pt auto;
     grid-template-columns: 1fr;
     row-gap: 0px;
 
@@ -130,34 +131,112 @@ aside {
     margin-bottom: 0px;
 }
 
-#page-bar p, #page-bar a {
+#page-bar p {
     align-self: center;
     color: white;
     -webkit-text-stroke: 5.5pt var(--deeporange);
     paint-order: stroke fill;
-
 }
 
-#canvas-area {
+#gallery-area {
     margin-top: 0.5em;
 
     width: 100%;
-    min-height: 300px;
     height: 67vh;
+    /*background-color: var(--mainblue);
+     border: 0.4em solid white; */
+
+    padding: 0.4em;
+    overflow-y: auto;
+}
+
+#gallery {
+    height: auto;
+    width: inherit;
+    
+    /* maybe use flexbox with wrapping for this one...
 
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
 
-    justify-items: center;
-    align-items: center;
+    grid-template-columns: repeat(3, 1fr); /* auto-fit */
 
-    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
 
-    /* border: 0.2em solid white; */
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.5em;
 }
 
-#canvas-holder {
-    width: auto;
+.gallery-item {
+    border: 0.35em solid white;
+    background: var(--mainblue);
+    
     height: auto;
+    width: auto;
+
+    display: grid;
+    grid-template-areas: "one";
+    overflow: hidden;
 }
+
+.project-title, .project-image, .project-gradient {
+    grid-area: one;
+}
+
+.project-image {
+    
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.project-image img { /* make a js for this */
+    height: 24em;
+    width: auto;
+}
+
+.project-gradient { /* appear on hover */
+    opacity: 0;
+    background: linear-gradient(to top, var(--mainblue) 0%, rgba(255, 255, 255, 0) 40%);
+    display: flex;
+    align-items: flex-end;
+    overflow-x: auto;
+}
+
+.project-title { 
+    color: white;
+    font-size: 16pt;
+
+    width: 100%;
+    height: fit-content;
+
+    text-align: left;
+    margin: 0;
+    padding: 0.5em;
+}
+
+.project-title a {
+    text-decoration: none;
+    color: white;
+}
+.project-title a:hover {
+    color: var(--neoncyan);
+}
+
+
+.gallery-item:hover {
+    .project-gradient {
+        opacity: 1;
+    } /* wow... this changes things.. i didn't know you could
+    put things inside stuff like this */
+}
+
+/*
+<a href="https://example.com" style="text-decoration: none; color: inherit;">
+  <div style="border: 1px solid #ccc; padding: 20px; background: #f9f9f9;">
+    <h2>Card Title</h2>
+    <p>Clicking anywhere inside this box will take you to the link.</p>
+  </div>
+</a>
+*/

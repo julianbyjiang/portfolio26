@@ -3,30 +3,47 @@
 }
 
 html {
-    height: auto;
+    height: 100%;
 }
 
 body {
+    margin: 0;
+    width: auto;
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 93.5vh 6.5vh;
+
+    grid-template-areas:
+    "main" "footer";
+}
+
+#bodybody {
+    grid-area: main;
     margin-top: 0;
     margin-bottom: 0;
-    width: 96vw; /* 1280px */
+    width: 96%;
 
-    min-width: 800px;
+    min-width: 60rem;
 
     overflow-x: hidden;
     overflow-y: auto;
 
-    min-height: 100vh;
+    min-height: 100%;
     justify-self: center;
 
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 12em auto 4em;
-
     padding: 0px;
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 12em auto;
+    grid-template-areas: "toppart" "main";
 }
 
 #top {
+    grid-area: toppart;
     /* border: 1px red solid; */
     width: 100%;
     height: 10em;
@@ -43,25 +60,6 @@ body {
 
     position: relative;
     z-index: 1;
-}
-
-nav ul {
-    padding-right: 1em;
-    list-style-type: none;
-    font-size: 20pt;
-    text-align: right;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    -webkit-text-stroke: 5.5pt var(--mainblue);
-    paint-order: stroke fill;
-}
-
-nav ul li a:hover{
-    
-    color: var(--neoncyan);
 }
 
 #name {
@@ -97,13 +95,16 @@ aside {
 
 .aside-desc {
     font-size: 14pt;
+    color: var(--lightcyan);
         
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    -ms-word-break: break-all;
+    overflow-wrap: normal;
+    word-wrap: normal;
+    -ms-word-break: normal;
+    word-break: normal;
 }
 
 #main-area {
+    grid-area: main;
     margin-top: 1em;
     justify-self: right;
     align-self: top;
@@ -114,75 +115,286 @@ aside {
     grid-template-columns: 1fr;
     row-gap: 0px;
 
-    height: fit-content;
+    height: auto;
     
     position: relative;
     z-index: 2;
 }
 
-#page-bar {
-    background-color: var(--deeporange);
-    font-size: 20pt;
-    height: 20pt;
-    color: white;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-    margin-bottom: 0px;
-}
-
-#page-bar p {
-    align-self: center;
-    color: white;
-    -webkit-text-stroke: 5.5pt var(--deeporange);
-    paint-order: stroke fill;
-
-}
-
-#gallery-area {
-    margin-top: 0.5em;
+#about-box-area {
+    margin-top: 0.1em;
 
     width: 100%;
     min-height: 300px;
-    height: 67vh;
+    height: 69vh;
 
+    overflow-y: auto;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2em auto;
+    grid-template-areas: "toppart" "main";
+
+}
+
+#about-box-top {
+    grid-area: toppart;
+    border: 0.4em solid var(--mainblue);
+    padding: 0;
+    border-bottom: 0;
+
+    display: grid;
+    grid-template-columns: 15% auto;
+    grid-template-rows: 1fr;
+}
+
+#about-box-top p {
+    margin: 0;
+    background-color: var(--deeporange);
+    height: 100%;
+    font-size: 1em;
+    padding-left: 0.3em;
+    color: white;
+    align-content: center;
+}
+
+#about-box-top-white {
+    width: 100%;
+    border-left: 0.4em solid var(--mainblue);
+    height: 100%;
+    background-color: var(--neoncyan);
+}
+
+#about-box {
+    grid-area: main;
+    
+    min-height: 100%;
+    height: auto;
+    width: inherit;
+
+    border: 0.4em solid var(--mainblue);
+    background-color: var(--mainblue);
+
+    display: grid;
+
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "left right";
+
+    gap: 0.8em;
+    padding: 0.8em;
+}
+
+#about-box-left {
+    grid-area: left;
+    padding: 0.4em;
+    padding-bottom: 0;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40% auto;
+    grid-template-areas: "drawing" "contact"; 
+    gap: 0.5em;
+
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+}
+#about-box-drawing {
+    grid-area: drawing;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: visible;
+}
+
+#about-box-drawing img {
+    transition: transform .2s;
+    width: 100%;
+    height: 100%;
+}
+
+#about-box-contact {
+    grid-area: contact;
+    align-self: top;
+}
+#about-box-contact div {
+    font-size: 14pt;
+    padding: 1em;
+
+    background-color: var(--orange);
+    color: var(--lightorange);/* change this later */
+}
+
+#about-box-right {
+    grid-area: right;
+    background-color: white;
+    
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: "desc stack";
+    column-gap: 0.8em;
+    padding: 0.6em;
+
+    word-break: keep-all;
+    overflow-wrap: normal;
     overflow-y: auto;
 }
 
-#gallery {
-    height: auto;
-    width: inherit;
-    
-    /* maybe use flexbox with wrapping for this one... */
-
-    display: flex;
-
-    justify-content: left;
-    gap: 0.5em;
-    
-    background-color: var(--lightcyan);
+#about-box-myDesc {
+    grid-area: desc;
 }
 
-footer {
-    overflow-x: hidden;
-    overflow-y: hidden;
-    width: 104.2%;
-    justify-self: center;
-
+#about-box-myDesc div {
     background-color: var(--mainblue);
-    border-top: 0.4em solid var(--neoncyan);
-    
-    display: flex;
-
-    padding: 1em;
-
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
     color: white;
+    /* maybe make the background a low contrast photograph (taken by me ofc) */
 
-    position: relative;
-    z-index: 1;
+    align-self: top;
+    justify-self: left;
+
+    font-size: 16pt;
+    padding: 0.8em;
+    text-align: left;
+}
+
+#about-box-myDesc span.hello {
+    font-size: 24pt;
+    font-weight: normal;
+    /* background-color: var(--deeporange); 
+    -webkit-text-stroke: 0.2em var(--deeporange);
+    paint-order: stroke fill;
+    color: var(--lightorange)*/
+    color: white;
+}
+
+#about-box-myDesc span.hello2 {
+    font-size: 20pt;
+    font-weight: normal;
+    color: white;
+}
+
+#about-box-myDesc strong {
+    font-weight: normal;
+    color: var(--lightorange);
+}
+
+#about-box-stack {
+    grid-area: stack;
+}
+
+#about-box-stack div {
+    background-color: var(--lightorange); 
+    color: var(--mainblue);
+    padding: 1em;
+    font-size: 16pt;
+}
+
+@media screen and (width < 60rem), (orientation: portrait) { /* no more aside  wait im CONFUSED  why doesnt width < height work....*/
+    aside {
+        display: none;
+    }
+    #main-area {
+        width: 95%;
+        justify-self: center;
+    }
+
+    #about-box-area {
+        height: 78vh;
+    }
+
+    #about-box {
+        grid-area: main;
+        
+        min-height: 100%;
+        height: auto;
+        width: inherit;
+
+        border: 0.4em solid var(--mainblue);
+        background-color: var(--mainblue);
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas: "toppart" "bottom";
+
+        gap: 0.8em;
+        padding: 0.8em;
+        overflow: auto;
+    }
+
+    #about-box-left {
+        grid-area: toppart;
+        padding: 0.4em;
+
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 10em auto;
+        grid-template-areas: "drawing contact"; 
+        gap: 0.5em;
+        align-items: center;
+
+        max-width: 100%;
+        max-height: 100%;
+        overflow-y: auto;
+    }
+
+    #about-box-drawing {
+        grid-area: drawing;
+        max-width: 100%;
+        max-height: 100%;
+        overflow: visible;
+    }
+
+    #about-box-drawing img {
+        width: 100%;
+        height: 100%;
+    }
+
+    #about-box-contact {
+        width: 100%;
+        height: fit-content;
+        grid-area: contact;
+    }
+    #about-box-contact div {
+        font-size: 14pt;
+        padding: 1em;
+
+        background-color: var(--orange);
+        color: var(--lightorange);/* change this later */
+    }
+
+    #about-box-right {
+        grid-area: bottom;
+        background-color: white;
+        
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 3fr 1fr;
+        grid-template-areas: "desc stack";
+        column-gap: 0.8em;
+        padding: 0.6em;
+
+        word-break: keep-all;
+        overflow-wrap: normal;
+        overflow-y: auto;
+    }
+
+    #about-box-myDesc {
+        grid-area: desc;
+    }
+
+    #about-box-myDesc div {
+        background-color: var(--mainblue);
+        color: white;
+        /* maybe make the background a low contrast photograph (taken by me ofc) */
+
+        align-self: top;
+        justify-self: left;
+
+        font-size: 16pt;
+        padding: 0.8em;
+        text-align: left;
+    }
 }
