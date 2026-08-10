@@ -1,0 +1,237 @@
+:root {
+	/* Colours */
+	--dark-green: rgb(67 107 48);
+	--light-green: rgb(207 236 165); /* #EAFBCC lighter green */
+	--prismarine: rgb(144 214 174);
+	--light-blue2: rgb(160 235 218);
+	--light-blue: rgb(186 228 230);
+	--dark-blue: rgb(22, 40, 65);
+	--yellow: rgb(248 224 107);
+	--yellow2: #ffef73;
+	--light-yellow: #fbffbf;
+	--brown: rgb(111 80 61);
+	--dark-brown: rgb(83 44 32);
+	--paper-white: rgb(248 246 227);
+	--paper-edge: rgb(212 193 148);
+
+    /* redo */
+
+    --mainblue: #102B94;
+    --neoncyan: #67E3FF; /* var(--neoncyan) */
+    --lightcyan: #DEFFFF;
+    --lightorange: #FFE371;
+    --orange: #FFA600;
+    --deeporange: #FF5900;
+}
+
+* {
+  box-sizing: border-box; /* Keeps total width at exactly */
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 96vw; /* 1280px */
+
+    min-width: 800px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    min-height: 100vh;
+    justify-self: center;
+
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 12em auto 4em;
+
+    grid-template-areas:
+    "aside top"
+    "aside main"
+    "footer footer";
+
+    padding: 0px;
+}
+
+#top {
+    grid-area: top;
+    
+    /* border: 1px red solid; */
+    width: 100%;
+    height: 10em;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 2em;
+    padding-bottom: 1em;
+
+    position: relative;
+    z-index: 1;
+}
+
+nav ul {
+    padding-right: 1em;
+    list-style-type: none;
+    font-size: 20pt;
+    text-align: right;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    -webkit-text-stroke: 5.5pt var(--mainblue);
+    paint-order: stroke fill;
+}
+
+nav ul li a.on-this-page {
+    color: var(--lightcyan);
+}
+
+nav ul li a:hover{
+    
+    color: var(--neoncyan);
+}
+
+#name {
+    padding-left: 0.5em;
+
+    transition: transform 0.5s;
+    font-size: 80pt;
+    color: white;
+    -webkit-text-stroke: 16pt var(--mainblue);
+    paint-order: stroke fill;
+}
+
+aside {
+    grid-area: aside;
+
+    background-color: var(--mainblue);
+    color: white;
+    padding: 1.5em;
+    padding-top: 13em;
+
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+    height: 100%;
+    width: 100%; /* 13% */
+
+    overflow-x: auto;
+    overflow-y: visible;
+}
+
+.aside-title {
+    font-size: 20pt;
+    margin-bottom: 0.5em;
+}
+
+.aside-desc {
+    font-size: 14pt;
+        
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+}
+
+#main-area {
+    grid-area: main;
+
+    margin-top: 1em;
+    justify-self: right;
+    align-self: top;
+
+    padding-left: 1.75em;
+    width: 100%; /* 75% */
+    display: grid;
+    grid-template-rows: auto 10fr;
+    grid-template-columns: 1fr;
+    row-gap: 0px;
+
+    height: fit-content;
+    
+    position: relative;
+    z-index: 2;
+}
+
+#page-bar {
+    background-color: var(--deeporange);
+    font-size: 20pt;
+    height: 20pt;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin-bottom: 0px;
+}
+
+#page-bar p {
+    align-self: center;
+    color: white;
+    -webkit-text-stroke: 5.5pt var(--deeporange);
+    paint-order: stroke fill;
+
+}
+
+#gallery-area {
+    margin-top: 0.5em;
+
+    width: 100%;
+    min-height: 300px;
+    height: 67vh;
+
+    overflow-y: auto;
+}
+
+#gallery {
+    height: auto;
+    width: inherit;
+    
+    /* maybe use flexbox with wrapping for this one... */
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr); /* auto-fit */
+    justify-content: center;
+    gap: 0.5em;
+}
+
+.gallery-item {
+    border: 0.2em solid white;
+    background: var(--mainblue);
+    height: 300px;
+}
+
+footer {
+    grid-area: footer;
+
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 104.2%;
+    justify-self: center;
+
+    background-color: var(--mainblue);
+    border-top: 0.4em solid var(--deeporange);
+    
+    display: flex;
+
+    padding: 1em;
+
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    color: white;
+
+    position: relative;
+    z-index: 1;
+}
