@@ -20,7 +20,7 @@ let bunnyImg;
 
 function preload() {
   bunnyImg = {
-    img: loadImage("/assets/images/bunny.png"), // 895x1278
+    img: loadImage("../images/bunny.png"), // 895x1278
     trueW: 895, 
     trueH: 1278,
     w: 0, // not defined yet
